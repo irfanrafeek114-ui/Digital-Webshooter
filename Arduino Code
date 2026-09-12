@@ -1,0 +1,92 @@
+#include <Wire.h>
+
+#define sensorAddress 0x68
+
+int16_t accelX;
+int16_t accelY;
+int16_t accelZ;
+
+long oldMotion = 0;
+int shakeLimit = 8000;
+int buzzerPin = 19;
+
+unsigned long lastShotTime = 0;
+int shotCooldown = 700;
+
+void setup() {
+  Serial.begin(115200);
+  Wire.begin(23, 22);
+
+  pinMode(buzzerPin, OUTPUT);
+  digitalWrite(buzzerPin, LOW);
+
+  Wire.beginTransmission(sensorAddress);
+  Wire.write(0x6B);
+  Wire.write(0x00);
+  Wire.endTransmission();
+
+  delay(100);
+
+  playWebSound();
+  readAccel();
+
+  oldMotion = abs((long)accelX) + abs((long)accelY) + abs((long)accelZ);
+
+  Serial.println("READY");
+}
+
+void loop() {
+  readAccel();
+
+  long newMotion = abs((long)accelX) + abs((long)accelY) + abs((long)accelZ);
+  long motionChange = abs(newMotion - oldMotion);
+
+  oldMotion = newMotion;
+
+  if (motionChange > shakeLimit && millis() - lastShotTime > shotCooldown) {
+    shootWeb();
+    lastShotTime = millis();
+  }
+
+  delay(10);
+}
+
+void readAccel() {
+  Wire.beginTransmission(sensorAddress);
+  Wire.write(0x3B);
+  Wire.endTransmission(false);
+  Wire.requestFrom(sensorAddress, 6);
+
+  if (Wire.available() >= 6) {
+    accelX = Wire.read() << 8 | Wire.read();
+    accelY = Wire.read() << 8 | Wire.read();
+    accelZ = Wire.read() << 8 | Wire.read();
+  }
+}
+
+void shootWeb() {
+  Serial.println("SHOOT");
+  playWebSound();
+}
+
+void playWebSound() {
+  makeBuzzerTone(600, 50);
+  makeBuzzerTone(900, 50);
+  makeBuzzerTone(1300, 50);
+  makeBuzzerTone(1900, 90);
+
+  digitalWrite(buzzerPin, LOW);
+}
+
+void makeBuzzerTone(int frequency, int durationMilliseconds) {
+  long halfPeriod = 500000L / frequency;
+  long numberOfCycles = (long)frequency * durationMilliseconds / 1000;
+
+  for (long cycle = 0; cycle < numberOfCycles; cycle++) {
+    digitalWrite(buzzerPin, HIGH);
+    delayMicroseconds(halfPeriod);
+
+    digitalWrite(buzzerPin, LOW);
+    delayMicroseconds(halfPeriod);
+  }
+}
