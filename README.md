@@ -10,58 +10,33 @@
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Team Lead: Muhammed Irfan Rafeek - Cape College of Engineering Alappuzha
+- Member 2: Aswathy Biju - Cape College of Engineering Alappuzha
 
 ### Project Description
-[2-3 lines about what your project does]
-
-### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
-
-### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+A webshooter that made using ESP 32 and MPU-6050 6 axis gyroscope & accelerometer. While the MPU sensor has a specific angle it transfers data through serial COM,the webpage designed in python displays web burst by measuring the angle and intensity.
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- Python & C
+- pygame
+- pyserial
+- Terminal & Online Compiler
 
 For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+- NodeMCU ESP32,MPU-6050,Jumper Wires,Bread Board
+- Arduino IDE
 
 ### Implementation
 For Software:
 # Installation
-[commands]
+pip install pygame pyserial
 
 # Run
-[commands]
+python WebShooter.py
 
 ### Project Documentation
-For Software:
-
-# Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
-
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
-
-For Hardware:
 
 # Schematic & Circuit
 ![Circuit](Add your circuit diagram here)
