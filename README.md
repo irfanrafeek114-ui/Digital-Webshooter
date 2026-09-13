@@ -41,10 +41,14 @@ python WebShooter.py
 <img width="412" height="350" alt="Screenshot 2026-09-13 102449" src="https://github.com/user-attachments/assets/5fe5cfbd-308e-4a7c-ab54-c8e152b65fc5" />
 
 # Build Photos
+
 Circuit containing ESP32 & MPU-6050
+
 <img width="515" height="473" alt="Screenshot 2026-09-13 134116" src="https://github.com/user-attachments/assets/b1697a87-18d6-4941-a75c-ea16c37c42e1" />
 <img width="478" height="316" alt="Screenshot 2026-09-13 134133" src="https://github.com/user-attachments/assets/56c4ca90-9de8-44ef-a409-e429bd1dedfe" />
+
 Final Build
+
 <img width="504" height="641" alt="Screenshot 2026-09-13 134312" src="https://github.com/user-attachments/assets/6f5f040e-0ac7-4bfc-a88b-3d63a1e38320" />
 
 ### Project Demo
