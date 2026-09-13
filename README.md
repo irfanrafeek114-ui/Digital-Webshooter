@@ -2,7 +2,7 @@
 
 
 
-# [Project Name] 🎯
+# DIGITAL WEBSHOOTER 🎯
 
 
 ## Basic Details
