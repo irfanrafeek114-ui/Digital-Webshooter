@@ -10,8 +10,8 @@
 
 
 ### Team Members
-- Team Lead: Muhammed Irfan Rafeek - Cape College of Engineering Alappuzha
-- Member 2: Aswathy Biju - Cape College of Engineering Alappuzha
+- Muhammed Irfan Rafeek - Cape College of Engineering Alappuzha
+- Aswathy Biju - Cape College of Engineering Alappuzha
 
 ### Project Description
 A webshooter that made using ESP 32 and MPU-6050 6 axis gyroscope & accelerometer. While the MPU sensor has a specific angle it transfers data through serial COM,the webpage designed in python displays web burst by measuring the angle and intensity.
